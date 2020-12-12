@@ -19,7 +19,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -40,7 +40,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'COMMON_ERRORS'					=> 'Erreurs courantes',
-	'COMMON_ERRORS_EXPLAIN'			=> 'Les raisons couramment rencontrées pour les erreurs indiquées ci-dessus peuvent être :<hr>- Une apostrophe (guillemet simple) est manquante avant le caractère « @ » ou « % » (la fin des lignes concernées doit aussi comporter une apostrophe) ;<br>- Le terme « pattern » a été remplacé par « path » ;<br>- L’ensemble de mots « scope: prototype » est devenu « shared: false » ;<br>- L’ensemble de mots « scope: container » est devenu « shared: true » ;<br>- L’ensemble de mots « scope: request » a aussi été modifié mais il est nécessaire de le vérifier pour savoir quoi remplacer ;<br>- Si un espace est utilisé dans le nom de l’extension celui-ci sera rapporté comme non conforme lorsqu’il contient le caractère « _ » (appelé tiret bas, underscore en anglais).<hr>Si un doute persiste concernant la syntaxe à corriger ou sur la manière de procéder, merci de vérifier l’existence d’une nouvelle version de l’extension et dans le cas contraire de contacter l’auteur de l’extension sur phpBB.com, GitHub.com ou sur son forum de support.',
+	'COMMON_ERRORS_EXPLAIN'			=> 'Les raisons couramment rencontrées pour les erreurs indiquées ci-dessus peuvent être :<hr>- Une apostrophe (guillemet simple) est manquante avant et/ou après une ligne commençant par le caractère « @ » ou « % » ;<br>- Le terme « pattern » a été remplacé par « path » ;<br>- L’ensemble de mots « scope: prototype » est devenu « shared: false » ;<br>- L’ensemble de mots « scope: container » est devenu « shared: true » ;<br>- L’ensemble de mots « scope: request » a aussi été modifié mais il est nécessaire de le vérifier pour savoir quoi remplacer ;<br>- Si un espace est utilisé dans le nom de l’extension celui-ci sera rapporté comme non conforme lorsqu’il contient le caractère « _ » (appelé tiret bas, underscore en anglais) ;<br>- Un fichier <em>services.yml</em> n’est pas « public ».<hr>Si un doute persiste concernant la syntaxe à corriger ou sur la manière de procéder, merci de vérifier l’existence d’une nouvelle version de l’extension et dans le cas contraire de contacter l’auteur de l’extension sur phpBB.com, GitHub.com ou sur son forum de support.',
 	'CONFIG_FILE_FAIL'				=> '<strong>Le fichier <em>%s</em> n’est pas conforme.</strong>',
 	'CONFIG_FILE_PASS'				=> 'Le fichier <em>%s</em> semble conforme.',
 	'COPY_CLIPBOARD'				=> 'Copier dans le presse-papier',
@@ -54,8 +54,8 @@ $lang = array_merge($lang, array(
 	'EXTENSION_NAME'				=> 'Nom de l’extension',
 	'EXTENSION_QUERY_EXPLAIN'		=> 'Extension présentant un problème dans son nom renseigné dans ses fichiers.',
 	'EXT_SERVICES_CHECK'			=> 'Contrôle syntaxique des fichiers *.yml des extensions',
-	'EXT_SERVICES_CHECK_EXPLAIN'	=> 'Afin d’être compatible avec phpBB 3.3.x, cette extension permet de vérifier la syntaxe de l’ensemble des fichiers <em>*.yml</em> de toutes les extensions présentes sur ce forum.<br>Aussi, un contrôle sera effectué sur l’espace utilisé dans les noms des extensions.
-  <br><br>Les résultats de l’analyse effectuée par cette extension ne garantissent <strong>PAS</strong> que l’extension analysée est pleinement compatible avec phpBB 3.3, il est toujours possible que d’autres problèmes soient présents dans les fichiers <em>*.yml</em>.<br><br>Note : Une extension « Dormante » est une extension présente dans le répertoire <em>./ext/</em> n’étant ni activée, ni désactivée.',
+	'EXT_SERVICES_CHECK_EXPLAIN'	=> 'Afin d’être compatible avec la version actuelle ou future de phpBB, cette extension permet de vérifier la syntaxe de l’ensemble des fichiers <em>*.yml</em> de toutes les extensions présentes sur ce forum.<br>Aussi, un contrôle sera effectué sur l’espace utilisé dans les noms des extensions.
+  <br><br>Les résultats de l’analyse effectuée par cette extension ne garantissent <strong>PAS</strong> que l’extension analysée est pleinement compatible avec la version actuelle ou future de phpBB, il est toujours possible que d’autres problèmes soient présents dans les fichiers <em>*.yml</em>.<br><br>Note : Une extension « Dormante » est une extension présente dans le répertoire <em>./ext/</em> n’étant ni activée, ni désactivée.',
 	'EXT_STATUS'					=> 'Statut de l’extension',
 
 	'FILE_EMPTY'					=> 'Le fichier <em>%s</em> est vide',
@@ -68,17 +68,22 @@ $lang = array_merge($lang, array(
 
 	'ICON_EXTN_DISABLE'				=> 'Désactiver cette extension',
 	'ICON_EXTN_ERROR'				=> 'Cette extension contient des erreurs',
+	'ICON_EXTN_ISSUE'				=> 'Il y a un problème potentiel avec cette extension',
 	'ICON_EXTN_OK'					=> 'Cette extension apparait comme conforme',
 	'ICON_EXTN_QUERY'				=> 'Cette extension présente un problème dans son nom renseigné dans ses fichiers',
 	'ICON_FILE_CLOSED'				=> 'Afficher la syntaxe actuelle et corrigée du fichier',
+	'ICON_FILE_ISSUE'				=> 'Ce fichier présente un problème potentiel',
 	'ICON_FILE_OPEN'				=> 'Masquer la syntaxe actuelle et corrigée du fichier',
 	'ICON_FILE_QUERY'				=> 'Le nom de l’extension doit être vérifié dans ce fichier',
 	'INVALID_CHRACTERS'				=> 'Un ou plusieurs caractère(s) « _ » (tiret bas, underscore en anglais) sont présents dans le nom de cette extension <em>%s</em>, ce qui n’est pas conforme.',
+	'ISSUE_EXPLAIN'					=> 'Extension présentant un problème potentiel dans une version future.',
+	'ISSUE_OPEN_EXPLAIN'			=> 'Afficher le problème potentiel dans ce fichier.',
 
 	'LEGEND'						=> 'Légende',
 
 	'NEW_FILE'						=> 'Proposition de syntaxe corrigée du fichier',
 	'NO_CONFIG_FILES'				=> 'Cette extension n’a aucun fichier de configuration',
+	'NOT_PUBLIC'					=> '<strong>Le fichier <em>%s</em> n’est pas public</strong>',
 
 	'OK_EXPLAIN'					=> 'Extension apparaissant comme conforme.',
 	'ORIGINAL_FILE'					=> 'Syntaxe actuelle du fichier',

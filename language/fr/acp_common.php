@@ -4,7 +4,7 @@
  * Extensions .yml check. An extension for the phpBB Forum Software package.
  * French translation by Galixte (https://www.galixte.com)
  *
- * @copyright (c) 2019 david63
+ * @copyright (c) 2020 david63
  * @license GNU General Public License, version 2 (GPL-2.0-only)
  *
  */
@@ -19,7 +19,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -39,17 +39,22 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
+	'CLICK_DONATE'				=> 'Effectuer un don',
+
 	'DONATE'					=> 'Donation',
 	'DONATE_EXTENSIONS'			=> 'Faire un don pour cette extension',
-	'DONATE_EXTENSIONS_EXPLAIN'	=> 'Cette extension comme toutes celles de l’auteur est entièrement gratuite. Si cette extension est bénéfique pour le forum, alors il peut être intéressant de faire un don en cliquant sur le bouton PayPal - Ce geste sera grandement apprécié. Bien que toute donation soit toujours la bienvenue, l’auteur s’engage à l’avenir à ne pas envoyer de contenu indésirable ni de demande de donation.',
+	'DONATE_EXTENSIONS_EXPLAIN'	=> 'Cette extension comme toutes celles de l’auteur est entièrement gratuite. Si cette extension est bénéfique pour le forum, alors il peut être intéressant de faire un don en cliquant sur le bouton PayPal, ou via l’image QR « Scan, Pay, Go » - Ce geste sera grandement apprécié. Bien que toute donation soit toujours la bienvenue, l’auteur s’engage à l’avenir à ne pas envoyer de contenu indésirable ni de demande de donation.',
 
 	'NEW_VERSION'				=> 'Nouvelle version - %s',
 	'NEW_VERSION_EXPLAIN'		=> 'Une nouvelle version %1$s pour cette extension est disponible au téléchargement.<br>%2$s',
 	'NEW_VERSION_LINK'			=> 'Lien de téléchargement',
+	'NO_JS'						=> 'Il apparait que le langage JavaScript est désactivé.<br>Merci de <a href="https://enablejavascript.co/">l’activer</a> dans le navigateur Web pour bénéficier de toutes les fonctionnalités disponibles sur cette page.',
 	'NO_VERSION_EXPLAIN'		=> 'Il n’y a pas d’information concernant la mise à jour de cette extension.',
 
 	'PAYPAL_BUTTON'				=> 'Faire un don via le bouton PayPal',
 	'PAYPAL_TITLE'				=> 'PayPal - Envoyer et recevoir des paiements en ligne de manière pratique, sécurisée et peu couteuse.',
+	'PHP_NOT_VALID'				=> 'La version du langage PHP n’est pas compatible avec cette extension.',
+	'PHPBB_NOT_VALID'			=> 'La version de phpBB utilisée par ce forum n’est pas compatible avec cette extension.',
 
 	'VERSION'					=> 'Version',
 ));
